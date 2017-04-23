@@ -13,15 +13,15 @@ void mkdir();
 int main()
 {
     char cmd[128];
-	printf("This system has the cmd below:\n");
-	printf("hello\n");
-        printf("help\n");
-        printf("quit\n");
-        printf("sum\n");
-        printf("compare\n");
-        printf("echo\n");
-        printf("ls\n");
-        printf("mkdir\n");
+    printf("This system has the cmd below:\n");
+    printf("hello\n");
+    printf("help\n");
+    printf("quit\n");
+    printf("sum\n");
+    printf("compare\n");
+    printf("echo\n");
+    printf("ls\n");
+    printf("mkdir\n");
 
     while(1)
     {
@@ -109,7 +109,7 @@ void echo()
 
     printf("Hello, strat your performance pls.\n");
     fgetc(stdin);
-	fputs(fgets(buf,128,stdin),stdout);
+    fputs(fgets(buf,128,stdin),stdout);
 }
 
 void mkdir()
