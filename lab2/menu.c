@@ -105,11 +105,11 @@ void compare()
 
 void echo()
 {
-    char per[128];
+    char buf[128];
 
     printf("Hello, strat your performance pls.\n");
-    scanf("%s", per);
-    printf("%s", per);
+    fgetc(stdin);
+	fputs(fgets(buf,128,stdin),stdout);
 }
 
 void mkdir()
