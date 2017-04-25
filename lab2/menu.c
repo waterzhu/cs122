@@ -30,7 +30,7 @@ int main()
         if (strcmp(cmd, "hello") == 0)
         {
             hello();
-	}
+        }
         else if(strcmp(cmd, "help") == 0)
         {
             help();
