@@ -32,21 +32,22 @@ var desc = [8] string {
 	"List files in this dir.",
 	"Make a new dir."}
 
+func SearchCondition(ppLinkTableNode *LinkTableNode, args string) int{
+	cmd := args
+	pNode := (*DataNode)(unsafe.Pointer(ppLinkTableNode))
+	if pNode.cmd == cmd{
+		return 0
+	}
+	return (-1)
+}
+	
+
+
 func FindCmd(head *LinkTable, cmd string) *DataNode{
-	var p *DataNode = (*DataNode)(unsafe.Pointer(GetLinkTableHead(head)))
-	if(head == nil ||cmd == " "){
-		return nil
-	}
-	for p != nil {
-		if p.cmd == cmd{
-			return p
-		}
-		p = (*DataNode)(unsafe.Pointer(GetNextLinkTableNode(head, (*LinkTableNode) (unsafe.Pointer(p)))))
-	}
-	return nil
+	return (*DataNode)(unsafe.Pointer(SearchLinkTableNode(head, SearchCondition, cmd)))
 }
 
-func ShowAllCmd (head *LinkTable) int {
+func ShowAllCmd(head *LinkTable) int {
 	fmt.Println("Menu List:")
 	p := (*DataNode)(unsafe.Pointer(GetLinkTableHead(head)))
 	for p != nil {
@@ -62,15 +63,12 @@ func ShowAllCmd (head *LinkTable) int {
 
 func InitMenuData(ppLinkTable **LinkTable) {
 	var i int
-	//*ppLinkTable = CreateLinkTable()
 	*ppLinkTable = new(LinkTable)
 	for i = 0; i <= 7; i++ {	
 		var pNode = new(DataNode)
-		//fmt.Println(pNode.cmd+" "+pNode.desc)	
 		pNode.cmd = cmd1[i]
 		pNode.desc = desc[i]
 		AddLinkTableNode( *ppLinkTable, (*LinkTableNode) (unsafe.Pointer(pNode)))
-		//fmt.Println(pNode.cmd+pNode.desc)
 	}
 
 }

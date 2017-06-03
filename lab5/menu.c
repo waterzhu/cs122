@@ -57,7 +57,7 @@ int SearchCondition(tLinkTableNode * pLinkTableNode, void * args)
 /* find a cmd in the linklist and return the datanode pointer */
 tDataNode* FindCmd(tLinkTable * head, char * cmd)
 {
-    return  (tDataNode*)SearchLinkTableNode(head,SearchCondition,(void*) cmd);
+    return  (tDataNode*)SearchLinkTableNode (head,SearchCondition,(void*) cmd);
 }
 
 /* show all cmd in listlist */
