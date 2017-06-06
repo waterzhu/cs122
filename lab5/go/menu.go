@@ -23,7 +23,7 @@ func main()  {
 		fmt.Scanln(&cmd)
 		p := FindCmd(head, cmd)
 		if p == nil{
-			fmt.Println("WORRY COMMAND!!")
+			fmt.Println("WRONG COMMAND!!")
 			continue
 		}
 		fmt.Println(p.cmd+" --- "+p.desc)

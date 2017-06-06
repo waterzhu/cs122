@@ -32,7 +32,7 @@ var desc = [8] string {
 	"List files in this dir.",
 	"Make a new dir."}
 
-func SearchCondition(ppLinkTableNode *LinkTableNode, args string) int{
+func SearchCondition(ppLinkTableNode *LinkTableNode, args interface{}) int{
 	cmd := args
 	pNode := (*DataNode)(unsafe.Pointer(ppLinkTableNode))
 	if pNode.cmd == cmd{

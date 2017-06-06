@@ -73,7 +73,7 @@ func GetNextLinkTableNode( pLinkTable *LinkTable, pNode *LinkTableNode) *LinkTab
 	return nil
 }
 
-func SearchLinkTableNode(pLinkTable *LinkTable, Conditon func(*LinkTableNode, string) int, args string) *LinkTableNode{
+func SearchLinkTableNode(pLinkTable *LinkTable, Conditon func(*LinkTableNode, interface{}) int, args interface{}) *LinkTableNode{
 	if pLinkTable ==nil || Conditon == nil{
 		return nil
 	}
